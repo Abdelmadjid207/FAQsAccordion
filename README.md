@@ -1,6 +1,6 @@
 # FAQsAccordion
 
-# A FAQs accordion html page
+A FAQs accordion html page
 #  CSS applications:
 - Design
 - Hover effects
