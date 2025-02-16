@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>FAQ accordion</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <section class="p1">
+            <div class="title">
+                <h2>FAQs</h2>
+                <h2>FAQs</h2>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>What is Frontend Mentor, and how will it help me?</h3>
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                      </svg>                  
+                </div>
+                <div class="answer">
+                    <p class="read">Frontend Mentor offers realistic coding challenges to help developers improve their 
+                        frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+                        all levels and ideal for portfolio building.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>Is Frontend Mentor free?</h3>
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                      </svg>                  
+                </div>
+                <div class="answer">
+                    <p class="read">Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+                        option providing access to a range of projects suitable for all skill levels.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>Can I use Frontend Mentor projects in my portfolio?</h3>
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                      </svg>                  
+                </div>
+                <div class="answer">
+                    <p class="read">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+                        way to showcase your skills to potential employers!</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>How can I get help if I'm stuck on a Frontend Mentor challenge?</h3>
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                      </svg>                  
+                </div>
+                <div class="answer">
+                    <p class="read">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+                        channel where you can ask questions and seek support from other community members.</p>
+                </div>
+            </div>
+            <script>
+                const accordion = document.getElementsByClassName('faq');
+                const water = document.getElementsByClassName('water');
+
+                for (i=0; i<accordion.length; i++){
+                    accordion[i].addEventListener('click',function(){
+                        this.classList.toggle('active');
+                    })
+                }
+            </script>
+            <script src="https://unpkg.com/split-type"></script>
+            <script>
+                const splitTypes = document.querySelectorAll('.read');
+
+                splitTypes.forEach((char,i) => {
+                    const text = new SplitType(char, { types: 'words'})
+
+                    console.log(text)
+                })
+            </script>
+        <svg id="arrow" onclick="slide_l()" class="w-6 h-6 text-gray-800 dark:text-white; arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+        </svg>
+        <script>
+            let arrow = document.getElementById("arrow");
+
+            function slide_l(){
+                window.scrollTo({
+                    left: document.body.scrollWidth,
+                    behavior: "smooth"
+                });
+            }
+        </script>
+        </section>        
+        <section class="p1">
+            <img src="sign.png" style="height: 300px;">
+            <a class="icon" href="https://github.com/Abdelmadjid207"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+            <svg id="barrow" onclick="slide_r()" class="w-6 h-6 text-gray-800 dark:text-white; arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+            </svg>    
+            <script>
+                let barrow = document.getElementById("barrow");
+    
+                function slide_r(){
+                    window.scrollTo({
+                        left: 0,
+                        behavior: "smooth"
+                    });
+                }
+            </script>                      
+        </section>
+    </body>
+</html>

@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: row; 
+    font-family: Arial;  
+}
+
+.p1{
+    background-color: rgb(15, 18, 20);
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+}
+
+.p1 .faq{
+    font-size: 13px;
+    width: 50%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.p1 .faq .question{
+    position: relative;
+    padding: 10px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.p1 .faq .question::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 1.5px;
+    width: 80%;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+
+.p1 .faq.active .question::after{
+    width: 0;
+    left: 50%;
+}
+
+.p1 .faq .answer{
+    position: relative;
+    color: #ffffff;
+    font-size: 2.5vmin;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+
+
+.p1 .faq .answer::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 1.5px;
+    width: 80%;
+    background-color: #ffffff;
+}
+
+.p1 .faq.active .answer{
+    height: 20vh;
+    padding: 10px;
+}
+
+
+
+.p1 .faq .question svg{
+    transition: 0.5s;
+}
+
+.p1 .faq.active .question svg{
+    transform: rotate(180deg);
+}
+
+.p1 .faq .answer::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.p1 .faq .answer::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.word {
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.word:hover{
+    text-shadow: 0 0px 20px #ffffff;
+    color: rgb(113, 146, 255);
+    font-size: 1.05em;
+}
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.p1 .icon{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin-left: 390px;
+    margin-top: 130px;
+    rotate: 20deg;
+    transition: 0.25s;
+    fill: white;
+}
+
+.p1 .icon:hover{
+    rotate: 40deg;
+    height: 50px;
+    width: 50px;
+}
+
+
+/*title///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.p1 .title {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p1 .title h2{
+    position: absolute;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 3em;
+    font-family: Arial, sans-serif;
+    
+}
+.p1 .title h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 0.5px #ffffff;   
+    text-shadow: 0 0px 50px #ffffff90; 
+}
+.p1 .title h2:nth-child(2){
+    color: #ffffff;
+    animation: animate 4s ease-in-out infinite;
+}
+@keyframes animate{
+    0%,100%{
+        clip-path: polygon(0% 53%, 8% 62%, 19% 67%, 30% 65%, 39% 60%, 50% 53%, 59% 47%, 69% 41%, 80% 39%, 93% 44%, 100% 55%, 100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0 54%, 8% 46%, 19% 41%, 31% 44%, 41% 53%, 51% 60%, 59% 69%, 70% 74%, 82% 70%, 92% 62%, 100% 51%, 100% 100%, 0 100%);
+    }
+}
+
+/*//////////////////////////////////////*/
+
+.arrow{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    color: #ffffff;
+    margin-left: 80%;
+    cursor: pointer;
+    transition: 0.25s;
+    border-radius: 100%;
+}
+
+.arrow:hover{
+    background-color: #ffffff;
+    color: black;
+}
+
+#arrow:hover{
+    transform: translateX(10px);
+}
+
+#barrow:hover{
+    transform: translateX(-10px);
+}
